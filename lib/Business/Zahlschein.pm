@@ -3,7 +3,7 @@ package Business::Zahlschein;
 use warnings;
 use strict;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 BEGIN {
 	use Exporter;
@@ -92,20 +92,20 @@ Zahlschein - a module for check digit computation
 
   # fuer Berechnung mit Pruefziffer im Mehrzweckfeld
   use Business::Zahlschein qw( PzMehrzweckfeld Mehrzweckfeld );
-  my $mehrzweckfeld = "01234567890";
-  my $kontoNr       = "00000012345";
-  $blz              = "10"."12000"; # ohne Betrag + BLZ
-  $belegart         = "42";
-  $pzMehrzweckfeld = PzMehrzweckfeld($mehrzweckfeld);
-  $lesezone        = Mehrzweckfeld($mehrzweckfeld, $pzMehrzweckfeld, $kontoNr, $blz, $belegart);
+  my $mehrzweckfeld   = "01234567890";
+  my $kontoNr         = "00000012345";
+  my $blz             = "10"."12000"; # ohne Betrag + BLZ
+  my $belegart        = "42";
+  my $pzMehrzweckfeld = PzMehrzweckfeld($mehrzweckfeld);
+  my $lesezone        = Mehrzweckfeld($mehrzweckfeld, $pzMehrzweckfeld, $kontoNr, $blz, $belegart);
 
   # fuer Berechnung ohne Pruefziffer im Mehrzweckfeld
   use Business::Zahlschein qw( Mehrzweckfeld );
   my $mehrzweckfeld = "012345678901";
   my $kontoNr       = "00000012345";
-  $blz              = "10"."12000"; # ohne Betrag + BLZ
-  $belegart         = "42";
-  $lesezone        = Mehrzweckfeld($mehrzweckfeld, $pzMehrzweckfeld, $kontoNr, $blz, $belegart);
+  my $blz           = "10"."12000"; # ohne Betrag + BLZ
+  my $belegart      = "42";
+  my $lesezone      = Mehrzweckfeld($mehrzweckfeld, $pzMehrzweckfeld, $kontoNr, $blz, $belegart);
 
 =head1 DESCRIPTION
 
